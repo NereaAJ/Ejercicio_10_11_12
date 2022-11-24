@@ -17,7 +17,7 @@ function TaskComponent ({task, mode, remove}) {
      * Devuelve el estado
      */
      function taskModeIcon(){
-        if(task.changeMode){
+        if(task.conected){
             return (<i onClick={() => mode(task)} className='bi-toggle-on task-action' style={{color: 'green'}}></i>)
         }else{
             return (<i onClick={() => mode(task)} className='bi-toggle-off task-action' style={{color: 'grey'}}></i>)
@@ -36,7 +36,7 @@ function TaskComponent ({task, mode, remove}) {
                 <span className='align-middle'>{ task.email }</span>
             </td>
             <td>
-                {/* <span className='align-middle'>{ task.mode ? 'Conectado' : 'Desconectado' }</span> */}
+                {/* <span className='align-middle'>{ task.conected ? 'Conectado' : 'Desconectado' }</span>  */}
                 {taskModeIcon()}
             </td>
             <td>

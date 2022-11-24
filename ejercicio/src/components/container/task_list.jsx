@@ -17,7 +17,7 @@ const TaskListComponents = () => {
         console.log('Complete this Task:', task);
         const index = tasks.indexOf(task);
         const tempTasks = [...tasks];
-        tempTasks[index].changeMode = !tempTasks[index].changeMode;
+        tempTasks[index].conected = !tempTasks[index].conected;
         setTasks(tempTasks);
     }
 
@@ -54,7 +54,7 @@ const TaskListComponents = () => {
                                     <th scope='col'> Name </th>
                                     <th scope='col'> Last name </th>
                                     <th scope='col'> Email </th>
-                                    <th scope='col'> State </th>
+                                    <th scope='col-2'> State </th>
                                     <th scope='col'> Delete </th>
                                 </tr>
                             </thead>
