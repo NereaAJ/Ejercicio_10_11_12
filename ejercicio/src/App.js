@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* Componente de listado de Estado de Contacto */}
-       {/* <TaskListComponents></TaskListComponents> */}
+       <TaskListComponents></TaskListComponents>
 
-       <Optionalrender></Optionalrender>
-       {/* <Ejercicio></Ejercicio> */}
+       {/* <Optionalrender></Optionalrender>
+       <Ejercicio></Ejercicio> */}
       </header>
     </div>
   );
