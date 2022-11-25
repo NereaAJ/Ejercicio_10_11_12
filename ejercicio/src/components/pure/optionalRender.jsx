@@ -1,52 +1,40 @@
 import React, {useState} from 'react';
 
-
-let red = 0;
-let green = 200;
-let blue = 150;
-
 // ? Estilo para usuario logueado
 const loggedStyle = {
-    backgroundColor: `rgb(${red},${green},${blue})`,
+    backgroundColor: 'black',
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '255px',
+    height: '255px'
 };
 
 // ? Estilo para usuario no logueado
 const unloggedStyle = {
-    backgroundColor: 'tomato',
+    backgroundColor: 'red',
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '255px',
+    height: '255px'
 }
 
-// Login / Logout buttons
-const LoginButton = ({loginAction, propStyle}) => {
+// Login / Logout divs
+const LoginRect = ({loginAction, propStyle}) => {
     return (
-        <button style={propStyle} onClick={loginAction}>Login</button>
+        <div style={propStyle} onDoubleClick={loginAction}>Rect 1</div>
     )
 }
 
-const LogoutButton = ({logoutAction, propStyle}) => {
+const LogoutRect = ({logoutAction, propStyle}) => {
     return (
-        <button style={propStyle} onClick={logoutAction}>Logout</button>
+        <div style={propStyle} onClick={logoutAction} >Rect 2</div>
     )
 }
-
-
-// ? (Expresión true) && expresión => se renderiza la expresión
-// ? (Expresión false) && expresión => no se renderiza la expresión
-
-
 
 
 const Optionalrender = () => {
 
     const [access, setAccess] = useState(false);
-    const [nMessages, setNMessages] = useState(0);
-
-    // const updateAccess = () => {
-    //     setAccess(!access);
-    // }
 
     const loginAction = () => {
         setAccess(true)
@@ -56,43 +44,20 @@ const Optionalrender = () => {
         setAccess(false)
     }
 
-
-    let optionalButton;
-
-    // if(access){
-    //     optionalButton = <button onClick={updateAccess}>Logout</button>
-    // }else{
-    //     optionalButton = <button onClick={updateAccess}>Login</button>
-    // }
+    let optionalRect;
 
     if(access){
-        optionalButton = <LogoutButton propStyle={ unloggedStyle } logoutAction={logoutAction} ></LogoutButton>
+        optionalRect = <LogoutRect propStyle={ unloggedStyle } logoutAction={logoutAction} ></LogoutRect>
     }else{
-        optionalButton = <LoginButton propStyle={ loggedStyle  } loginAction={loginAction}></LoginButton>
+        optionalRect = <LoginRect propStyle={ loggedStyle  } loginAction={loginAction}></LoginRect>
     }
 
-    // Unread messages
-    let addMessages = () => {
-        setNMessages(nMessages + 1)
-    }
 
     return (
         <div>
-            {/* Optional Button */}
-            { optionalButton }
-            {/* N Mesagges unread */}
-            {/* { nMessages > 0 && nMessages === 1 && <p>You have {nMessages} new message...</p> }
-            { nMessages > 1 && <p>You have {nMessages} new messages...</p> }
-            { nMessages === 0 && <p>There are no new messages</p>} */}
-            {/* Ternay Operator */}
-            {access ? (
-                <div>
-                    { nMessages > 0 ? 
-                    <p>You have {nMessages} new message{nMessages > 1 ? 's': null}...</p> : 
-                    <p>There are no new messages</p>
-                    }
-                    <button onClick={addMessages}>{nMessages === 0 ? 'Add your first message': 'Add new Message'}</button>
-                </div>) : null}
+            {/* Optional Rect */}
+            { optionalRect }
+            {access}
         </div>
     );
 }

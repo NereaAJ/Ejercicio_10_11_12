@@ -5,6 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // ! Importate dejar los estilos promios por debajo
 import './index.css';
+
+import 'randomcolor';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,6 +1,8 @@
 import './App.css';
 import TaskListComponents from './components/container/task_list';
+import Ejercicio from './components/pure/ejercicio';
 import Optionalrender from './components/pure/optionalRender';
+
 function App() {
   return (
     <div className="App">
@@ -9,6 +11,7 @@ function App() {
        {/* <TaskListComponents></TaskListComponents> */}
 
        <Optionalrender></Optionalrender>
+       {/* <Ejercicio></Ejercicio> */}
       </header>
     </div>
   );
